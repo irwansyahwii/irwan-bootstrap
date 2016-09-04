@@ -15,6 +15,5 @@ export class ContainerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('this.fluid:', this.fluid);
   }
 }

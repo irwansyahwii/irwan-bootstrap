@@ -6,10 +6,10 @@
 <container fluid="true">
 </container>
 
-<row flex="items-xs-left">
+<row flexItems="xs-left">
 </row>
 
-<col tiers="xs, sm-4, xs-1, sm-8" class="hidden-sm-up" offsets="md-4">
+<col xs="true" sm="6" lg="true" sm="4" xs="1" sm="8" hidden="xs-down, " offset="md-4">
 </col>
 
 <media>

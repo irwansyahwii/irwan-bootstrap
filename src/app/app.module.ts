@@ -5,11 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component';
+import { RowComponent } from './row/row.component';
+import { ColumnComponent } from './col/col.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContainerComponent
+    ContainerComponent,
+    RowComponent,
+    ColumnComponent
   ],
   imports: [
     BrowserModule,
