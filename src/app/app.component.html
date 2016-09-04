@@ -1,5 +1,12 @@
-<container fluid="true">
-    <row flexItems="xs-top">
-        <column offset="md-4" xs="4" lg="12" hidden="xs-up,xs-down"></column>
+<container [fluid]="fluid">
+    <row>
+        <column sm="4">One of three column</column>
+        <column sm="4">One of three column</column>
+        <column sm="4">One of three column</column>
+    </row>
+    <row>
+        <column xs=12>
+            <button (click)="change()" >test</button>
+        </column>
     </row>
 </container>

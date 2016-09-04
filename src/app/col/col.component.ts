@@ -71,13 +71,20 @@ export class ColumnComponent implements OnInit, OnChanges {
 
   protected setSizeClass(sizeName:string, sizeValue:string, separator:string = '-'){
     sizeValue = sizeValue.trim().toLowerCase();
+
+    let divElement = this.el.nativeElement.querySelector('div');
+
     if(sizeValue.length > 0){
       if(sizeValue === "true"){
-        this.renderer.setElementClass(this.el.nativeElement, sizeName, true);
+        this.renderer.setElementClass(divElement, sizeName, true);
       }
       else{
-        this.renderer.setElementClass(this.el.nativeElement, sizeName + separator + sizeValue, true);
+        this.renderer.setElementClass(divElement, sizeName + separator + sizeValue, true);
       }
+    }
+    else{
+      this.renderer.setElementClass(divElement, sizeName, false);
+      this.renderer.setElementClass(divElement, sizeName + separator + sizeValue, false);
     }
     
   }
@@ -108,8 +115,7 @@ export class ColumnComponent implements OnInit, OnChanges {
     })
   }
 
-  ngOnChanges(){
-    
+  reApply(){
     let errors = validate(this, this.attributesConstraints, {format:'flat'}) || null;
 
     if(errors !== null){
@@ -138,9 +144,13 @@ export class ColumnComponent implements OnInit, OnChanges {
     })
   }
 
+  ngOnChanges(){
+    this.reApply();
+  }
+
 
   ngOnInit() {
-
+    this.reApply();
 
   }
 

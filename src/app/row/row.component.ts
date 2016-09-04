@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Renderer, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'row',
@@ -19,11 +19,24 @@ export class RowComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-    this.renderer.setElementClass(this.el.nativeElement, 'row', true);
+  ngOnInit(){
+    this.reApply();
+  }
+
+  reApply(){
+    let divElement = this.el.nativeElement.querySelector('div');
+
+    this.renderer.setElementClass(divElement, 'row', true);
     if(this.flexItems.trim().length > 0){
-      this.renderer.setElementClass(this.el.nativeElement, 'flex-items-' + this.flexItems.trim(), true);
+      this.renderer.setElementClass(divElement, 'flex-items-' + this.flexItems.trim(), true);
     }
+    else{
+      this.renderer.setElementClass(divElement, 'flex-items-' + this.flexItems.trim(), false);
+    }
+  }
+
+  ngOnChanges() {
+    this.reApply();
     
   }
 
