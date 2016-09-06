@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component';
 import { RowComponent } from './row/row.component';
 import { ColumnComponent } from './col/col.component';
+import { MediaComponent } from './media/media.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
     RowComponent,
-    ColumnComponent
+    ColumnComponent,
+    MediaComponent
   ],
   imports: [
     BrowserModule,

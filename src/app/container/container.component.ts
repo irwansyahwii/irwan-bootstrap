@@ -5,7 +5,7 @@ import { Component, OnInit, Output, Input, ElementRef, Renderer, OnChanges, DoCh
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.css']
 })
-export class ContainerComponent implements OnInit, DoCheck, OnChanges {
+export class ContainerComponent {
   /**
    * Setting this to true will change the css class to .container-fluid 
    */
@@ -33,20 +33,5 @@ export class ContainerComponent implements OnInit, DoCheck, OnChanges {
 
   constructor(private el:ElementRef, private renderer:Renderer ) { }
 
-  ngOnInit() {
-  }
-
-  ngDoCheck(){
-  }
-
-  ngOnChanges(){
-    // this.className = this.fluid ? 'container-fluid' : 'container';
-
-    // let divEl = this.el.nativeElement.querySelector('div');
-    
-    // this.renderer.setElementClass(divEl, 'container-fluid', false);
-    // this.renderer.setElementClass(divEl, 'container', false);
-    // this.renderer.setElementClass(divEl, className, true);
-  }
 
 }

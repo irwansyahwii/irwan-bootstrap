@@ -13,7 +13,7 @@
 </col>
 
 <media>
-    <media-left>
+    <media-left vertical-alignment="top | middle | bottom">
     </media-left>
     <media-right>
     </media-right>
@@ -22,6 +22,11 @@
         </media-heading>
     </media-body>
 </media>
+
+<media-list>
+    <media>
+    </media>
+</media-list>
 
 Directives:
 
